@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/style.css';
 import axios from 'axios';
 
 function Chat() {
@@ -39,34 +38,35 @@ function Chat() {
   };
 
   return (
-    <>
-    <a href="/dashboard" className="back-to-dashboard center" >Back to Dashboard</a>
-    <div>
-      <h2>Chat</h2>
-      <div className="chat-container">
-        <div className="chat-messages">
-          {chatMessages.map((message, index) => (
-            <div key={index} className={message.className}>
-              {message.text}
+      <>
+        <div className="container my-3">
+          <a href="/dashboard" className="btn btn-link mb-2">Back to Dashboard</a>
+          <div className="card">
+            <h2 className="card-header">Chat</h2>
+            <div className="card-body">
+              <div className="chat-messages list-group mb-3">
+                {chatMessages.map((message, index) => (
+                    <div key={index} className={`list-group-item ${message.className === 'message user' ? 'list-group-item-primary' : ''}`}>
+                      {message.text}
+                    </div>
+                ))}
+              </div>
+              <hr />
+              <div className="default-questions">
+                {defaultQuestions.map((question, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handleQuestionClick(question, index + 1)}
+                        className="btn btn-outline-primary m-1"
+                    >
+                      {question}
+                    </button>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-        <br />
-        <hr/>
-        <div className="default-questions">
-          {defaultQuestions.map((question, index) => (
-            <button
-              key={index}
-              onClick={() => handleQuestionClick(question, index + 1)}
-              className="question-button"
-            >
-              {question}
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-    </>
+      </>
   );
 }
 
