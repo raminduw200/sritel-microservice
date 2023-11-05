@@ -135,9 +135,9 @@ function Services() {
             if (selectedDataTopUp === "1") {
                 updatedData[index].status = "Data plan of 1GB is Activated";
             } else if (selectedDataTopUp === "2") {
-                updatedData[index].status = "Data plan of 3GB is Activated";
+                updatedData[index].status = "Data plan of 10GB is Activated";
             } else {
-                updatedData[index].status = "Data plan of 5GB is Activated";
+                updatedData[index].status = "Data plan of 30GB is Activated";
             }
             updatedData[index].action = "Change";
             updatedData[index].action2 = "Deactivate";
