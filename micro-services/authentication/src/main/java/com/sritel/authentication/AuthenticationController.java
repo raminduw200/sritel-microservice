@@ -14,8 +14,13 @@ public class AuthenticationController {
     private static final Map<String, String> userCredentials = new HashMap<>();
 
     static {
-        userCredentials.put("user1@mail.com", "password1");
-        userCredentials.put("user2@mail.com", "password2");
+        userCredentials.put("ramindu@mail.com", "ramindu");
+        userCredentials.put("oshani@mail.com", "oshani");
+        userCredentials.put("idusha@mail.com", "idusha");
+        userCredentials.put("inuri@mail.com", "inuri");
+        userCredentials.put("pawandi@mail.com", "pawandi");
+        userCredentials.put("malindu@mail.com", "malindu");
+        userCredentials.put("harini@mail.com", "harini");
     }
 
 //    @PostMapping("/login")
