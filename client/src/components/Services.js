@@ -14,7 +14,7 @@ function Services() {
 
     const [data, setData] = useState([
         { service: "Roaming", status: "Deactivate", action: "" },
-        { service: "Data top ups", status: dataTopUpsStatus === "" ? "Deactivate" : dataTopUpsStatus, action: "Activate", action2: "" },
+        { service: "Data plans", status: dataTopUpsStatus === "" ? "Deactivate" : dataTopUpsStatus, action: "Activate", action2: "" },
         { service: "Other services", status: "Deactivate", action: "" },
         { service: "Ringtone", status: ringtoneStatus === "" ? "Deactivate" : ringtoneStatus, action: "Activate", action2: "" },
     ]);
@@ -37,10 +37,10 @@ function Services() {
                 alert(response.data.message);
                 setRingtoneStatus("Deactivate");
 
-            } else if (serviceName === 'Data top ups') {
+            } else if (serviceName === 'Data plans') {
                 //hide action2 btn and change the status to deactivate 
                 const updatedData = [...data];
-                const index = updatedData.findIndex(item => item.service === "Data top ups");
+                const index = updatedData.findIndex(item => item.service === "Data plans");
                 if (index !== -1) {
                     updatedData[index].status = "Deactivate";
                     updatedData[index].action = "Activate";
@@ -71,9 +71,9 @@ function Services() {
                     alert(response.data.message);
                     console.log(response);
                 } 
-                // else if (serviceName === 'Data top ups') {
+                // else if (serviceName === 'Data plans') {
                 //     const response = await axios.post(`http://localhost:8082/telco/dataTopUp/${data[serviceIndex].status === 'Active' ? 'sub' : 'unsub'}`, {
-                //         service: 'Data top ups',
+                //         service: 'Data plans',
                 //         status: data[serviceIndex].status,
                 //     });
                 //     alert(response.data);
@@ -104,7 +104,7 @@ function Services() {
             return;
         }
         // confirm the song change
-        const confirmChange = window.confirm('Are you sure you want to change the song?');
+        const confirmChange = window.confirm('Do you want to change the song?');
         if (!confirmChange) {
             return;
         }
@@ -114,11 +114,11 @@ function Services() {
         const index = updatedData.findIndex(item => item.service === "Ringtone");
         if (index !== -1) {
             if (selectedSong === "1") {
-                updatedData[index].status = "Mahada Namathi Wana Bambara: Ringing Tone Activated";
+                updatedData[index].status = "Take me to church is Activated";
             } else if (selectedSong === "2") {
-                updatedData[index].status = "Bambara Wage Visekaraya: Ringing Tone Activated";
+                updatedData[index].status = "Hall of fame is Activated";
             } else {
-                updatedData[index].status = "Nim Him Sewwa: Ringing Tone Activated";
+                updatedData[index].status = "The greatest is Activated";
             }
             // change the action button to "Change Song"
             updatedData[index].action = "Change";
@@ -143,33 +143,33 @@ function Services() {
     };
 
 
-    // Function to handle changing the status data to the selected data top up
+    // Function to handle changing the status data to the selected data plan
     const handleDataTopUpChange = async () => {
-        // Check if a data top up has been selected
+        // Check if a data plan has been selected
         if (!selectedDataTopUp) {
-            alert('Please select a data top up');
+            alert('Select a data plan');
             return;
         }
-        // confirm the data top up change
-        const confirmChange = window.confirm('Are you sure you want to change the data top up?');
+        // confirm the data plan change
+        const confirmChange = window.confirm('Do you want to change the data plan?');
         if (!confirmChange) {
             return;
         }
 
-        // Update the status data with the selected data top up
+        // Update the status data with the selected data plan
         const updatedData = [...data];
-        const index = updatedData.findIndex(item => item.service === "Data top ups");
+        const index = updatedData.findIndex(item => item.service === "Data plans");
         if (index !== -1) {
             if (selectedDataTopUp === "1") {
-                updatedData[index].status = "Data top up 1GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 1GB is Activated";
             } else if (selectedDataTopUp === "2") {
-                updatedData[index].status = "Data top up 3GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 10GB is Activated";
             } else {
-                updatedData[index].status = "Data top up 5GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 30GB is Activated";
             }
-            // change the action button to "Change Data Top Up"
+            // change the action button to "Change Data plan"
             updatedData[index].action = "Change";
-            // Add a new button to deactivate the data top up
+            // Add a new button to deactivate the data plan
             updatedData[index].action2 = "Deactivate";
         }
         console.log(selectedDataTopUp);
@@ -178,14 +178,14 @@ function Services() {
             const response = await axios.post(`http://localhost:8082/telco/dataTopUp/sub/${selectedDataTopUp}`);
             alert(response.data.message);
     
-            // Hide the data top up selector
+            // Hide the data plan selector
             SetDataTopUpSelector(false);
         } catch (error) {
             // Handle any errors that may occur during the request.
             console.error('Error:', error);
         }
 
-        // Hide the data top up selector
+        // Hide the data plan selector
         SetDataTopUpSelector(false);
     };
 
@@ -227,11 +227,11 @@ function Services() {
                                                 </button>
                                             </div>
                                         // DATA TOP UPS
-                                        ) : val.service === 'Data top ups' && val.action === 'Activate' ? (
+                                        ) : val.service === 'Data plans' && val.action === 'Activate' ? (
                                                 <button onClick={() => SetDataTopUpSelector(true)}>
                                                     {val.action}
                                                 </button>
-                                        ) : val.service === 'Data top ups' && val.action === 'Change' ? (
+                                        ) : val.service === 'Data plans' && val.action === 'Change' ? (
                                             <div>
                                                 <button onClick={() => SetDataTopUpSelector(true)}>
                                                     {val.action}
@@ -259,23 +259,23 @@ function Services() {
                     <h3>Available Songs List:</h3>
                     <select onChange={(e) => setSelectedSong(e.target.value)}>
                         <option value="">Select a song</option>
-                        <option value="1">Mahada Namathi Wana Bambara</option>
-                        <option value="2">Bambara Wage Visekaraya</option>
-                        <option value="3">Nim Him Sewwa</option>
+                        <option value="1">Take me to church</option>
+                        <option value="2">Hall of fame</option>
+                        <option value="3">The greatest</option>
                     </select>&nbsp;
                     <button onClick={handleSongChange}>Confirm</button>
                 </div>
             )}
 
-            {/* Data Top Up Selector */}
+            {/* Data plan Selector */}
             {showDataTopUpSelector && (
                 <div className="song-selector"><br/>
-                    <h3>Available Data Top Ups:</h3>
+                    <h3>Available Data plans:</h3>
                     <select onChange={(e) => setSelectedDataTopUp(e.target.value)}>
-                        <option value="">Select a data top up</option>
+                        <option value="">Select a data plan</option>
                         <option value="1">1GB - Rs.100</option>
-                        <option value="2">3GB - Rs.250</option>
-                        <option value="3">5GB - Rs.400</option>
+                        <option value="2">10GB - Rs.250</option>
+                        <option value="3">30GB - Rs.400</option>
                     </select>&nbsp;
                     <button onClick={handleDataTopUpChange}>Confirm</button>
                 </div>
