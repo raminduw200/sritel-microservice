@@ -1,0 +1,126 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+
+.form input {
+    width: 98%;
+    margin-bottom: 10px;
+}
+
+.form-dashboard div button {
+    width: 100%;
+}
+
+.form-dashboard div {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+table {
+    width: 800px;
+}
+
+td {
+    text-align: center;
+    border-top: 1px solid black;
+    text-align: left;
+}
+
+td, th {
+    padding-left: 5px;
+    height: 50px;
+}
+
+.form-dashboard table button {
+    width: 70%;
+}
+
+.table-bill table button {
+    width: auto
+}
+
+
+.chat-container {
+    max-width: 400px;
+    margin: 0 auto 5rem auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.message {
+    background-color: #e1e1e1;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.message.user {
+    background-color: #2ea2cc;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.message input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-radius: 0;
+    outline: none;
+}
+
+.message input[type="text"]:focus {
+    border-top: 1px solid #2ea2cc;
+}
+
+.message input[type="submit"] {
+    background-color: #2ea2cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.message input[type="submit"]:hover {
+    background-color: #2ea2cc;
+}
+
+.default-questions button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.back-to-dashboard {
+    display: flex;
+    margin-left: 23rem;
+    margin-top: 1rem;
+}
+
+.center {
+    display: grid;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.cardExpiry {
+    display: flex;
+    column-gap: 1rem;
+    width: 31%;
+    margin-top: 5px;
+}
