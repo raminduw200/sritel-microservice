@@ -13,23 +13,23 @@ public class ChatController {
     @GetMapping("/messages/{questionId}")
     public List<String> getMessages(@PathVariable Integer questionId) {
         if(questionId == 1) {
-            return Arrays.asList("Call us on 0778956251 or Email us: sritelhelpdesk@gmail.com" );
+            return Arrays.asList("Yes, You can find detailed information about our discounts and special offers on our website or by contacting our sales team." );
         } else if (questionId == 2) {
-            return Arrays.asList("We handle all kinds of Services from Mobile, Fixed, Broadband, Data and Enterprise Solutions");
+            return Arrays.asList("Yes, we offer a risk-free trial period for new users. During this time, you can explore our services and features without any charges.");
         } else if (questionId == 3){
-            return Arrays.asList("In the Home Page click on E-bills tab view your current and past bills");
+            return Arrays.asList("If you experience any technical issues, please reach out to our 24/7 technical support team. You can contact them via live chat, email, or phone.");
         } else if (questionId == 4){
-            return Arrays.asList("You can make online payments by logging into your account and selecting the payment option. Follow the prompts to complete the transaction.");
+            return Arrays.asList("First log into your account and select the payment option. Follow the given instructions to complete each step");
         } else if (questionId == 5){
-            return Arrays.asList("To view your payment history, log in to your account and navigate to the \"Payment History\" section. There, you'll find a record of your past payments.");
+            return Arrays.asList("First log in to your account and find \"Payment History\" section. A record of past payments is available there.");
         } else if (questionId == 6){
-            return Arrays.asList("We accept various payment methods, including credit cards, debit cards, and online banking. You can choose the one that suits you best during the payment process.");
+            return Arrays.asList("Available options include debit cards, credit cards, and online banking.");
         } else if (questionId == 7){
-            return Arrays.asList("To set up email notifications, go to your account settings and find the \"Notification Preferences\" section. You can customize your notification preferences there.");
+            return Arrays.asList("First go to your account settings. Find the \"Notification Preferences\" section. Customize your notification preferences there by selecting the method as email.");
         } else if (questionId == 8){
-            return Arrays.asList("Our customer care agents are available for live chat support during our business hours, which are typically from 9:00 AM to 6:00 PM, Monday to Friday.");
+            return Arrays.asList("Customer care agents support is available from 7:30 AM to 9:00 PM, Everyday.");
         } else {
-            return Arrays.asList("Sorry, I don't understand your question. Please try again.");
+            return Arrays.asList("Your question is not clear. Please try again.");
         }
     }
 
