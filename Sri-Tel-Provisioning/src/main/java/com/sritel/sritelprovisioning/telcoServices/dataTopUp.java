@@ -14,11 +14,11 @@ public class dataTopUp {
     public Map<String, Object> subRingTone(@PathVariable String Topupid) {
         HashMap response = new HashMap<>();
         if(Topupid.equals("1"))
-            response.put("message","Data top up 1GB Available for 1 week") ;
+            response.put("message","You can purchase a 3GB data top-up valid for one week.") ;
         else if(Topupid.equals("2"))
-            response.put("message","Data top up 3GB Available for 3 weeks") ;
+            response.put("message","You can purchase a 10GB data top-up valid for one month.") ;
         else if(Topupid.equals("3"))
-            response.put("message","Data top up 5GB Available for 1 month") ;
+            response.put("message","You can purchase a 30GB data top-up valid for one month.") ;
         else
             response.put("message","You did not subscribe to ant data top up plans yet") ;
 
