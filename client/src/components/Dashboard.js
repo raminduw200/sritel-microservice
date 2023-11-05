@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/style.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Dashboard() {
 
@@ -35,30 +35,26 @@ function Dashboard() {
     };
 
     return (
-        <div className="form-container">
-            <h2>Dashboard</h2>
-            <p>Welcome John :)</p>
-            <div className="form form-dashboard">
-                <div>
-                    <button onClick={navigateToServices}>Services</button>
-                </div>
-                <div>
-                    <button onClick={navigateToBills}>E-Bills</button>
-                </div>
-                <div>
-                    <button onClick={navigateToChat}>Chat</button>
-                </div>
-                <div>
-                    <button onClick={navigateToNotifications}>Notifications - <label>3</label></button>
-                </div>
-                <div>
-                    <button onClick={navigateToProfile}>Profile</button>
-                </div>
-                <div>
-                    <button onClick={navigateToHelp}>Feedback and Helpdesk</button>
-                </div>
-                <div>
-                    <button onClick={navigateToLogin}>Logout</button>
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card">
+                        <h2 className="card-header text-center">Dashboard</h2>
+                        <div className="card-body">
+                            <p>Welcome John :)</p>
+                            <div className="d-grid gap-2">  {/* Use grid for button layout */}
+                                <button className="btn btn-primary" onClick={navigateToServices}>Services</button>
+                                <button className="btn btn-primary" onClick={navigateToBills}>E-Bills</button>
+                                <button className="btn btn-primary" onClick={navigateToChat}>Chat</button>
+                                <button className="btn btn-primary" onClick={navigateToNotifications}>
+                                    Notifications - <span className="badge bg-secondary">3</span>
+                                </button>
+                                <button className="btn btn-primary" onClick={navigateToProfile}>Profile</button>
+                                <button className="btn btn-primary" onClick={navigateToHelp}>Feedback and Helpdesk</button>
+                                <button className="btn btn-danger" onClick={navigateToLogin}>Logout</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

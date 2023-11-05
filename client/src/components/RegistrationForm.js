@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import Axios
-import '../styles/style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
-const register_ULR = 'http://localhost:8222/api/register/register';
+const register_URL = 'http://localhost:8222/api/register/register';
 
 function RegistrationForm() {
     const [formData, setFormData] = useState({
@@ -20,35 +20,22 @@ function RegistrationForm() {
         navigate('/');
     };
 
-    // Handle form input changes
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     }
 
-    const requestData = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        contactNumber: formData.contactNumber,
-        password: formData.password
-    }
-
-    // Handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            // const response = await axios.post(register_ULR, JSON.stringify(requestData), {headers: { 'Content-Type': 'application/json' },withCredentials: true});
-
-            const response = await axios.post(register_ULR + "/" + formData.firstName + "/" + formData.lastName + "/" + formData.email + "/" + formData.password + "/" + formData.contactNumber);
+            const response = await axios.post(register_URL + "/" + formData.firstName + "/" + formData.lastName + "/" + formData.email + "/" + formData.password + "/" + formData.contactNumber);
 
             if (response.data === "Error") {
                 alert("Registration failed. Please provide all the details.");
             } else if (response.data === "Success") {
                 alert("Registration successful!");
                 navigateToLogin();
-
             }
 
         } catch (error) {
@@ -57,63 +44,36 @@ function RegistrationForm() {
     }
 
     return (
-        <div className="form-container">
-            <h2>Registration</h2>
-            <form onSubmit={handleSubmit} className="form">
-                <div>
-                    <label>First Name:</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        required
-                    />
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card">
+                        <h2 className="card-header text-center">Registration</h2>
+                        <div className="card-body">
+                            <form onSubmit={handleSubmit}>
+                                {Object.keys(formData).map((key) => (
+                                    <div className="form-group mb-3" key={key}>
+                                        <label htmlFor={key + "Input"} className="form-label">{key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1').trim()}:</label>
+                                        <input
+                                            type={key === "password" || key === "email" ? key : "text"}
+                                            className="form-control"
+                                            id={key + "Input"}
+                                            name={key}
+                                            value={formData[key]}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                    </div>
+                                ))}
+                                <button type="submit" className="btn btn-primary w-100">Register</button>
+                            </form>
+                        </div>
+                        <div className="card-footer text-center">
+                            Already have an account? <button className="btn btn-link" onClick={navigateToLogin}>Login</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label>Last Name:</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-                {/* contact number */}
-                <div>
-                    <label>Contact Number:</label>
-                    <input
-                        type="text"
-                        name="contactNumber"
-                        value={formData.contactNumber}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div><br/>
-                <button type="submit">Register</button><br/>
-            </form>
-           Already have an account? <button onClick={navigateToLogin}>Login</button>
+            </div>
         </div>
     );
 }
