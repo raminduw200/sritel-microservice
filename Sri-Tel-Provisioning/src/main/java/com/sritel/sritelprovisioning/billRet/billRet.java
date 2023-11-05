@@ -18,9 +18,9 @@ public class billRet {
         billamount.put("RingingTone",100);
         billamount.put("Roaming",700);
 
+        response.put("Bill Date", "2023-10-20");
         response.put("UserID", userID);
         response.put("Bill", billamount);
-        response.put("Bill Date", "2023-10-20");
 
         return response;
     }

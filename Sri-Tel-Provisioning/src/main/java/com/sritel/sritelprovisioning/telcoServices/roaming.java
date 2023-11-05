@@ -13,13 +13,13 @@ public class roaming {
     @PostMapping("/sub")
     public Map<String, Object> subRoaming() {
         HashMap response = new HashMap<>();
-        response.put("message","Subscribed to Roaming ");
+        response.put("message","You have subscribed to Roaming ");
         return response;
     }
     @PostMapping("/unsub")
     public Map<String, Object> unsubRoaming() {
         HashMap response = new HashMap<>();
-        response.put("message","Unsubscribed to Roaming ");
+        response.put("message","You have unsubscribed from Roaming ");
         return response;
     }
 }

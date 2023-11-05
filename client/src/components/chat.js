@@ -3,18 +3,18 @@ import axios from 'axios';
 
 function Chat() {
   const defaultQuestions = [
-    "How can I contact support?",
-    "Tell me more about your services.",
-    "Where can I view my current and past bills on the Sri-Care platform?",
-    "How can I make online payments for my telecommunications services?",
-    "How can I view my payment history?",
-    "What payment methods are accepted for online bill payments?",
-    "How do I set up email notifications for my account?",
-    "What are the customer care agents' working hours for live chat support?"
+    "Are there any discounts available for long-term subscriptions?",
+    "Is there a trial period available for your services?",
+    "What do I do if I encounter technical issues while using your platform?",
+    "What is the process for making online payments for my telecommunications services?",
+    "Where can I access my current and previous bills on the Sri-Care platform?",
+    "Which payment methods do you accept for online bill payments?",
+    "Could you guide me on setting up email notifications for my account?",
+    "What are the operational hours for customer care agents available for live chat support?"
   ];
 
   const [chatMessages, setChatMessages] = useState([
-    { text:"Hello! How can I help you? :)", className: "message" }
+    { text:"Hi! How may I help you today? :)", className: "message" }
   ]);
 
   const handleQuestionClick = (question, id) => {
