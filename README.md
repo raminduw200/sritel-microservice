@@ -1,33 +1,44 @@
-# Sri-Tel - Middleware Architectures Assignment
+# Sri-Tel - Middleware Architectures Project
 
-#  - Sri Tel Ltd Customer Experience Prototype
+## Sri Tel Ltd Customer Experience Prototype
 
-Welcome to the Middleware Architectures assignment for Sri Tel Ltd (STL) - New Customer Experience Prototype. This project aims to demonstrate a technology solution based on middleware architectures and related technologies to improve the customer experience for STL's telecommunications services.
+Welcome to the Middleware Architectures project for Sri Tel Ltd (STL) - New Customer Experience Prototype. This initiative is dedicated to developing a technology solution that employs middleware architectures and related technologies to enhance the customer experience within STL's telecommunications services.
 
-## Assignment Overview
+### Project Overview
 
-In this group assignment, our objective is to create a prototype solution for a specific business scenario provided by STL. The solution should leverage middleware architecture principles and open-source technologies.
+In this collaborative project, our goal is to design and implement a prototype solution for a specific business scenario presented by STL. The solution will incorporate the principles of middleware architecture and utilize open-source technologies.
 
-## Scenario: Sri Tel Ltd (STL)
+### Scenario: Sri Tel Ltd (STL)
 
-STL is a Sri Lankan-based telecommunication company striving to enhance its customer care and experience. The management's goal is to attract new customers by offering a modern Internet-based Customer Care Web Portal, branded as "Sri-Care," along with iOS and Android smartphone apps. These platforms will empower customers to manage their services conveniently.
+STL, a leading telecommunications provider in Sri Lanka, is focused on improving its customer care and experience. The management aims to draw in new customers by introducing a state-of-the-art Internet-based Customer Care Web Portal, known as "Sri-Care," together with companion iOS and Android smartphone applications. These new platforms are intended to provide customers with the convenience of managing their services effortlessly.
 
-### Key Functions of the Solution
+#### Key Features of the Prototype
 
-Our solution will address several key functions, including:
-- Activating and deactivating Telco services (e.g., international roaming, VAS).
-- Viewing current and past bills.
-- Making online payments using credit and debit cards.
-- Receiving notifications via email, SMS, and push alerts.
-- Engaging in live chat with customer care agents.
-- Offering a knowledge base with FAQs and user guides.
+The prototype we are developing will encompass several essential features, such as:
+- Enabling the activation and deactivation of Telco services, such as international roaming and Value-Added Services (VAS).
+- Providing access to view current and historical billing information.
+- Facilitating online payment transactions using credit and debit cards.
+- Delivering notifications through email, SMS, and in-app push alerts.
+- Supporting real-time interactions with customer care representatives via live chat.
+- Presenting a comprehensive knowledge base that includes FAQs and user guides.
 
-## Getting Started
+### Contributing to the Project
 
-To contribute to this project, follow these steps:
-1. Clone this repository to your local development environment.
-2. Refer to the [Installation Guide](/docs/installation-guide.md) for setup instructions.
-3. Customize and extend the solution based on the provided scenario.
+To take part in this project, please follow the steps below:
+1. Clone the repository to your local development environment.
+2. Consult the [Installation Guide](/docs/installation-guide.md) for detailed setup instructions.
+3. Tailor and enhance the prototype according to the scenario requirements provided by STL.
 
----
+### Team Members
 
+| Name                    | Index Number |
+|-------------------------|--------------|
+| WIJEGUNAWARDANE I.A.P.P. | 20002157     |
+| WICKRAMASINGHE W.M.O.E. | 20002149     |
+| WALGAMA R.R.            | 20001959     |
+| PERERA M.A.I.A.         | 20001304     |
+| DE SILVA T.P.M.         | 20000375     |
+| HARISCHANDRA L.I.L.     | 20000715     |
+| SAMALIARACHCHI H.U.     | 20001551     |
+
+Submission report: [SubmissionReport.pdf](http://example.com/path-to-your-file.pdf)
