@@ -1,43 +1,49 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../styles/Notification.css'
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Notifications() {
-
-    //use state to store the data
+    // Use state to store the data
     const [data, setData] = useState([]);
 
-    //use axios to get the data from backend
+    // Use axios to get the data from backend
     useEffect(() => {
         axios.get('http://localhost:8082/userNotification/list')
             .then((response) => {
                 setData(response.data);
-                console.log(data);
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);    
+    }, []);
+
     return (
-        <>
-            <a href="/dashboard" className="back-to-dashboard center">Back to Dashboard</a>
-            <div className="notifications-page">
-                <h2>Notifications</h2>
-                <div className="notification-list">
-                    {data.map((notification) => (
-                        <Link to={`/${notification.url}`}><div className="notification" key={notification.id} >
-                            <div className="notification-title">
-                                <h4>{notification.notification}</h4>
-                                <h5>{notification.date}</h5>
+        <div className="container mt-5">
+            <div className="d-flex justify-content-center mb-3">
+                <Link to="/dashboard" className="btn btn-secondary">Back to Dashboard</Link>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <h2 className="card-header text-center">Notifications</h2>
+                        <div className="card-body">
+                            <div className="list-group">
+                                {data.map((notification) => (
+                                    <Link to={`/${notification.url}`} className="list-group-item list-group-item-action flex-column align-items-start" key={notification.id}>
+                                        <div className="d-flex w-100 justify-content-between">
+                                            <h4 className="mb-1">{notification.notification}</h4>
+                                            <small>{notification.date}</small>
+                                        </div>
+                                        <p className="mb-1">{notification.description}</p>
+                                    </Link>
+                                ))}
                             </div>
-                            <p>{notification.description}</p>
-                        </div></Link>
-                    ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
