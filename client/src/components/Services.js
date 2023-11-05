@@ -95,11 +95,11 @@ function Services() {
         const index = updatedData.findIndex(item => item.service === "Ringtone");
         if (index !== -1) {
             if (selectedSong === "1") {
-                updatedData[index].status = "Mahada Namathi Wana Bambara: Ringing Tone Activated";
+                updatedData[index].status = "Take me to church is Activated";
             } else if (selectedSong === "2") {
-                updatedData[index].status = "Bambara Wage Visekaraya: Ringing Tone Activated";
+                updatedData[index].status = "Hall of the fame is Activated";
             } else {
-                updatedData[index].status = "Nim Him Sewwa: Ringing Tone Activated";
+                updatedData[index].status = "The greatest is Activated";
             }
             updatedData[index].action = "Change";
             updatedData[index].action2 = "Deactivate";
@@ -133,11 +133,11 @@ function Services() {
         const index = updatedData.findIndex(item => item.service === "Data top ups");
         if (index !== -1) {
             if (selectedDataTopUp === "1") {
-                updatedData[index].status = "Data top up 1GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 1GB is Activated";
             } else if (selectedDataTopUp === "2") {
-                updatedData[index].status = "Data top up 3GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 10GB is Activated";
             } else {
-                updatedData[index].status = "Data top up 5GB Activated for 1 month";
+                updatedData[index].status = "Data plan of 30GB is Activated";
             }
             updatedData[index].action = "Change";
             updatedData[index].action2 = "Deactivate";
@@ -226,9 +226,9 @@ function Services() {
                         <h3>Available Songs List:</h3>
                         <select className="form-control d-inline w-auto mr-2" onChange={(e) => setSelectedSong(e.target.value)}>
                             <option value="">Select a song</option>
-                            <option value="1">Mahada Namathi Wana Bambara</option>
-                            <option value="2">Bambara Wage Visekaraya</option>
-                            <option value="3">Nim Him Sewwa</option>
+                            <option value="1">Take me to church</option>
+                            <option value="2">Hall of the fame</option>
+                            <option value="3">The greatest</option>
                         </select>
                         <button className="btn btn-primary" onClick={handleSongChange}>Confirm</button>
                     </div>
@@ -240,8 +240,8 @@ function Services() {
                         <select className="form-control d-inline w-auto mr-2" onChange={(e) => setSelectedDataTopUp(e.target.value)}>
                             <option value="">Select a data top up</option>
                             <option value="1">1GB - Rs.100</option>
-                            <option value="2">3GB - Rs.250</option>
-                            <option value="3">5GB - Rs.400</option>
+                            <option value="2">10GB - Rs.250</option>
+                            <option value="3">30GB - Rs.400</option>
                         </select>
                         <button className="btn btn-primary" onClick={handleDataTopUpChange}>Confirm</button>
                     </div>
